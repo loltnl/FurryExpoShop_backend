@@ -1,39 +1,52 @@
 # FurryExpoShop_backend
-
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+一个个通用的开源兽展票务后端，帮助兽展主办方减少前期部署成本，使用Apache2.0作为开源许可证
+#### TODO列表
+0.配置
+  - 将使用配置文件外置(ison/yml) 或单独python文件为配置文件(待定)
+  - 暂不提供HTTP SSL功能，请使用Nginx或Apache服务器作为代理进行HTTPSSL配置
+1.用户注册/管理
+  - 手机号注册
+  - 小程序注册
+  - 头像上传
+  - 微信/支付宝调用人脸识别进行三要素验证
+  - 结合三要素结果和身份证进行成年人验证
+  - 未成年人进行三要素识别后会进行标记
 
-#### 软件架构
-软件架构说明
+2.票务管理
+  - **验证是否为未成年人**
+  - 如使用成年人微信进行实名后可以选择是否为孩子购票
+  - **未成年人/为孩子购票**提示需要上传未成年人家长知情同意书，审核通过后方可购票
+  - 提示实名与身份证不一致的情况工作人员有权拒绝入场
+  - 票务转移接口
+  - 工作室入入驻摊位费支付接口 (获取权限后购买)
+  - 小游戏/活动费用支付接口
 
+3.支付接口
+  - 支付之前验证是否已实名
+  - 选择支付平台
+  - 生成订单
+  - 轮询/回调以标记已完成订单
 
-#### 安装教程
+4.问卷跳转
+  - 暂提供**问卷星小程序/网页**，问卷网网页跳转填写问卷
+  - 摊位申请
+  - 兽装申请
+  - 舞台申请
+  - STAFF申请
+  - 官签画师嘉宾申请
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+5.信息展板
+  - 已审核的兽装图片
+  - 查看已入驻摊位
+  - 已邀请/申请的官签画师嘉宾
+  - 会场时间信息
+  - 大合照下载信息
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+6.额外功能
+  - （接口）些额外需要在后端请求的资源的索引链接json列表(如首页的banner图片，上传的一些展示图片等)
+  - （Feature）对象存储中间件
+  - （Feature）支付接口中间件
+TODO:接口文档
+TODO:安装教程
+TODO: 使用说明

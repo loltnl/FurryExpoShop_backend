@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = {version = "*", extras = ["all"], index = "pypi"}
+pymongo = {version = "*", index = "pypi"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
