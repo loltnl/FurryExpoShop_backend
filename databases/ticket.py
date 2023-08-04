@@ -7,6 +7,9 @@ class ColTicket:
         self.col = MongoClient(host=config["ip"], port=config["port"])[config["db_name"]]["ticket"]
 
     def list(self, limit: int = 50, skip: int = 0):
-        result = self.col.find({}).limit(limit).skip(skip)
+        result = []
+        data = self.col.find({}, {"_id": 0}).limit(limit).skip(skip)
+        for i in data:
+            result.append(i)
         return result
         

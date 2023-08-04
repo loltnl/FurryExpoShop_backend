@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-
+from databases.ticket import ColTicket
 
 TicketPage = APIRouter()
 
 
 @TicketPage.get("/list")
 def ticket_list():
-    return
+    return ColTicket().list()
 
 
 @TicketPage.post("/buy")
