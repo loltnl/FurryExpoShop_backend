@@ -1,3 +1,8 @@
+genernal: 
+  query_limit:
+    maxium: 200
+    minimal: 10
+
 databases: 
   ip: '127.0.0.1'
   port: 27017
