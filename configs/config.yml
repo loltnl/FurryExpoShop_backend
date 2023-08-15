@@ -7,3 +7,6 @@ databases:
   ip: '127.0.0.1'
   port: 27017
   db_name: expo_shop
+
+all_salt:
+  jwt_salt: "Sample!Salt#Do*Not*Use*This*Salt"

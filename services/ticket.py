@@ -32,7 +32,7 @@ def ticket_list(
     
     print(page, total_page)
     if page > total_page:
-        return servicedata(ResQueryOutRange, gen_data, "页数超过查询限制")
+        return servicedata(ResQueryOutRangeError, gen_data, "页数超过查询限制")
     else:
         lst = ColTicket().list(limit, page - 1)
         gen_data["list"] = lst
