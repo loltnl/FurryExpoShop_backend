@@ -8,6 +8,8 @@ ResNormalModify = 20031
 ResNormalCheck = 20010
 
 ResCheckInvaild = 40001
+ResQueryNotFound = 40101
+
 
 ResQueryOutRangeError = 50001
 

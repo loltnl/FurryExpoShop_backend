@@ -6,7 +6,14 @@ from plugins.gen_jwtdata import check_jwt
 from jwt import ExpiredSignatureError
 
 from plugins.gen_servcode import *
+
+from pydantic import BaseModel
+
+from databases.users import ColUsers
+
+
 UserPage = APIRouter()
+
 
 @UserPage.post("/register/generate/CAPTCHA")
 def GenerateCaptcha():
@@ -22,7 +29,21 @@ def RegByphone():
 def RegByWechat():
     return
 
+# 登录接口
+class Login(BaseModel):
+    username: str
+    password: str
+    captcha: str
 
+@UserPage.post("/login")
+def UserLogin(params: Login):
+    data = ColUsers().query(params.username)
+    if data is None:
+        return servicedata(ResQueryNotFound, msg="未找到该用户")
+    
+    return 
+
+# JWT测试
 @UserPage.get("/testjwt/gen")
 def TestJwtGen():
     test = generate_jwt({"user": "test", "privilege": "admin"}, 600)

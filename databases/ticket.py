@@ -7,7 +7,7 @@ class ColTicket:
         self.col = MongoClient(host=config["ip"], port=config["port"])[config["db_name"]]["ticket"]
     
     def count_total_document(self):
-        return  self.col.count_documents({})
+        return self.col.count_documents({})
     
     def list(self, limit: int = 50, skip: int = 0):
         result = []
