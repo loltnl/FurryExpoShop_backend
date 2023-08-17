@@ -8,6 +8,7 @@ fastapi = {version = "*", extras = ["all"], index = "pypi"}
 pymongo = {version = "*", index = "pypi"}
 pyyaml = "*"
 pyjwt = "*"
+requests = "*"
 
 [dev-packages]
 

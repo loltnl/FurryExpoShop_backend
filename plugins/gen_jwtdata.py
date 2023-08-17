@@ -6,7 +6,7 @@ import time
 salt = config_reader.read_config("all_salt")["jwt_salt"]
 
 
-def generate_jwt(data: dict, expire_seconds: int = 600):
+def generate_jwt(data: dict, expire_seconds: int = 600) -> str:
     headers: dict[str, str] = {
         "alg": "HS256",
         "typ": "JWT"
@@ -29,6 +29,6 @@ def generate_jwt(data: dict, expire_seconds: int = 600):
     
     return token
 
-def check_jwt(jwt_token: str):
+def check_jwt(jwt_token: str) -> dict:
         res = jwt.decode(jwt=jwt_token, key=salt, verify=True, algorithms=["HS256"])
         return res

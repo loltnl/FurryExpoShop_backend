@@ -10,3 +10,5 @@ databases:
 
 all_salt:
   jwt_salt: "Sample!Salt#Do*Not*Use*This*Salt"
+  local_password_salt: "Sample!passwd_salt!DoNot?Use?This*Salt"
+  hmac_salt: "Sample!hmac_salt!DoNot~Use#This&Salt"
