@@ -7,7 +7,7 @@ salt = config_reader.read_config("all_salt")["jwt_salt"]
 
 
 def generate_jwt(data: dict, expire_seconds: int = 600):
-    headers = {
+    headers: dict[str, str] = {
         "alg": "HS256",
         "typ": "JWT"
     }
