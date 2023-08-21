@@ -139,3 +139,5 @@ dmypy.json
 cython_debug/
 
 configs/.security.yml
+
+test.py

@@ -9,6 +9,8 @@ pymongo = {version = "*", index = "pypi"}
 pyyaml = "*"
 pyjwt = "*"
 requests = "*"
+gmssl = "*"
+captcha = "*"
 
 [dev-packages]
 

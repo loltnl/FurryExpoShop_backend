@@ -5,13 +5,8 @@ class ColUsers:
     def __init__(self):
         config = read_config(category="databases")
         self.col = MongoClient(host=config["ip"], port=config["port"])[config["db_name"]]["users"]
-    def query(self, username: str) -> None | dict:
-        data = self.col.find_one(
-            {"username": username}, 
-            {
-                "_id": 0,
-                "username": 1,
-                "password": 1
-                })
+    
+    def query(self, data, recv_filter: dict) -> None | dict:
+        data = self.col.find_one(data, recv_filter)
         
         return data
