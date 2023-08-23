@@ -30,5 +30,5 @@ def generate_jwt(data: dict, expire_seconds: int = 600) -> str:
     return token
 
 def check_jwt(jwt_token: str) -> dict:
-        res = jwt.decode(jwt=jwt_token, key=salt, verify=True, algorithms=["HS256"])
-        return res
+    res = jwt.decode(jwt=jwt_token, key=salt, verify=True, algorithms=["HS256"])
+    return res

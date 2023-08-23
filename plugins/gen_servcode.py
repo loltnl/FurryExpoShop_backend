@@ -8,6 +8,7 @@ ResNormalModify = 20031
 ResNormalCheck = 20010
 
 ResCheckInvaild = 40001
+ResCheckExpired = 40002
 ResQueryNotFound = 40101
 
 
